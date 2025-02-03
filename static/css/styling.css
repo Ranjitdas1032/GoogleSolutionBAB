@@ -1,0 +1,75 @@
+:root {
+    /* ... (Your existing color variables) ... */
+
+    /* Light Green Variant */
+    --light-green-body: #e6f4ea; /* Very light green for body background */
+    --light-green-heading: #d0e8ce; /* Slightly darker green for headings */
+    --light-green-base: #a3c4a2; /* Medium green for accents */
+    --light-green-base2: #819e80; /* Darker green for secondary accents */
+    --light-green-brand: #c8e6c9; /* Light green for brand color */
+    --light-green-brand2: #b0d2b1; /* Slightly darker brand color */
+    --light-green-background: #f0f8f2; /* Light green for main content areas */
+    --light-green-card-background: #ffffff; /* White for card backgrounds (can stay white) */
+    --light-green-border: #c0d0c0; /* Light gray-green for borders */
+    --light-green-text: #333; /* Dark gray/black for text (can stay the same) */
+    --light-green-link: #2e7d32; /* Green for links */
+    --light-green-link-hover: #1b5e20; /* Darker green on link hover */
+    --light-green-success: #4caf50; /* Standard green for success messages */
+    --light-green-error: #f44336; /* Standard red for error messages (can stay the same) */
+
+
+    /* ... (Your existing spacing, font size, border radius variables) ... */
+}
+.light-green-theme { /* Apply this class to the <body> or a container element */
+    background-color: var(--light-green-body);
+    color: var(--light-green-text);
+}
+
+.light-green-theme h1, .light-green-theme h2, .light-green-theme h3 {
+    color: var(--light-green-heading);
+}
+
+.light-green-theme .sidebar {
+    background-color: var(--light-green-base2);
+    color: white;
+}
+
+.light-green-theme .card {
+    background-color: var(--light-green-card-background);
+    border: 1px solid var(--light-green-border);
+}
+
+.light-green-theme a {
+    color: var(--light-green-link);
+}
+
+.light-green-theme a:hover {
+    color: var(--light-green-link-hover);
+}
+
+.light-green-theme button {
+    background-color: var(--light-green-brand);
+    color: var(--light-green-base2);
+}
+
+.light-green-theme .success-message { /* Example for a success message */
+  color: var(--light-green-success);
+}
+
+.light-green-theme .error-message { /* Example for an error message */
+  color: var(--light-green-error);
+}
+
+/* ... and so on ... */
+
+/* You can also combine themes or create more variants */
+
+.dark-theme .card {
+    background-color: #1e1e1e; /* Darker card background in dark theme */
+    border-color: #333;
+    color: #eee;
+}
+
+.dark-theme h1, .dark-theme h2, .dark-theme h3 {
+  color: #fff; /* White headings in dark theme */
+}
