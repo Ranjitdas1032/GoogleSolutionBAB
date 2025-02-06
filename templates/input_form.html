@@ -6,18 +6,29 @@ Agriculture Recommendation
 
 {% block body %}
 <!-- Write your code here directly no need for html snippit  -->
-<h1>Enter Your Farm Details </h1>
-<form method="post" action="{% url 'recommend_crop' %}">
-    {% csrf_token %}
-    <label for="land_dimensions">Land Dimensions:</label>
-    <input type="text" id="land_dimensions" name="land_dimensions" required>
-    
-    <label for="climate">Climate:</label>
-    <input type="text" id="climate" name="climate" required>
-    
-    <label for="soil_type">Soil Type:</label>
-    <input type="text" id="soil_type" name="soil_type" required>
-    
-    <button type="submit">Submit</button>
-</form>
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg p-4 rounded-lg w-50 bg-light">
+        <h1 class="text-center mb-4 text-success">Enter Your Farm Details</h1>
+        <form method="post" action="{% url 'recommend_crop' %}">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label for="land_dimensions" class="form-label">Land Dimensions (in Hectare)</label>
+                <input type="text" id="land_dimensions" name="land_dimensions" class="form-control" placeholder="e.g.,fifty by fifty hectare" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="climate" class="form-label">Climate</label>
+                <input type="text" id="climate" name="climate" class="form-control" placeholder="e.g., Tropical, Dry, Humid" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="soil_type" class="form-label">Soil Type</label>
+                <input type="text" id="soil_type" name="soil_type" class="form-control" placeholder="e.g., Sandy, Loamy, Clay" required>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100">Submit</button>
+        </form>
+    </div>
+</div>
 {% endblock body %}

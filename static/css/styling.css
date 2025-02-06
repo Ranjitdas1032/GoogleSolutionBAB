@@ -26,7 +26,7 @@
 }
 
 .light-green-theme h1, .light-green-theme h2, .light-green-theme h3 {
-    color: var(--light-green-heading);
+    color: var(--light-green-text);
 }
 
 .light-green-theme .sidebar {
