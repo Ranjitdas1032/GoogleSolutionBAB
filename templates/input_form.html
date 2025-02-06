@@ -1,0 +1,23 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% block title %}
+Agriculture Recommendation
+{% endblock title %}
+
+{% block body %}
+<!-- Write your code here directly no need for html snippit  -->
+<h1>Enter Your Farm Details </h1>
+<form method="post" action="{% url 'recommend_crop' %}">
+    {% csrf_token %}
+    <label for="land_dimensions">Land Dimensions:</label>
+    <input type="text" id="land_dimensions" name="land_dimensions" required>
+    
+    <label for="climate">Climate:</label>
+    <input type="text" id="climate" name="climate" required>
+    
+    <label for="soil_type">Soil Type:</label>
+    <input type="text" id="soil_type" name="soil_type" required>
+    
+    <button type="submit">Submit</button>
+</form>
+{% endblock body %}
