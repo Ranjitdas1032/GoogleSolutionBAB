@@ -15,6 +15,33 @@
 </head>
 <body class="light-green-theme">
 
+     <!-- Header Navigation -->
+     <header class="header">
+        <nav class="nav-container">
+            <div class="logo">AgroManage Pro</div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/about_us">About Us</a>
+                <a href="/dashboard">Dashboard</a><!--DASHBOARD LINK-->
+                <a href="/faq">FAQ</a>
+                <div class="auth-buttons">
+                    <a href="/login" class="auth-button">Login</a> <!-- LOGIN PAGE LINK-->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Alert message -->
+{% if messages %}
+    <div id="message-box" class="alert-box">
+        {% for message in messages %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %} 
+
     <div class="content-wrapper">
         {% block body %}
         
@@ -22,8 +49,48 @@
 
     </div>
 
+    <!-- Footer Section -->
+    <footer class="footer" id="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="text-white">Our Team</h3>
+                <ul>
+                    <li>Ranjit Das</li>
+                    <li>Mohit Kumar</li>
+                    <li>Abhishek Kumar Pal</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 class="text-white">Contributions</h3>
+                <ul>
+                    <li>Beckend Developer</li>
+                    <li>Frontent Developer</li>
+                    <li>Frontent Developer</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 class="text-white">Contact</h3>
+                <ul>
+                    <li>Email: ranjitdas1032@gmail.com</li>
+                    <li>Phone: 882 697 0884</li>
+                    <li>Address: New Delhi, INDIA</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 AgroManage Pro. All rights reserved.</p>
+            <p>Committed to Sustainable Agriculture</p>
+        </div>
+    </footer>
+
     <script src="{% static 'js/aos.js' %}"></script>
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
+    <script>
+        // Auto-hide the message after 3 seconds
+        setTimeout(function() {
+            document.getElementById("message-box").style.display = "none";
+        }, 3000);
+    </script>
 </body>
 </html>

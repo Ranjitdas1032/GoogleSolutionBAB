@@ -6,5 +6,93 @@ index_page
 
 {% block body %}
 <!-- Write your code here directly no need for html snippit  -->
-<h1>Hi its index page</h1>
+<!--hero content-->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1 class="text-white">Smart Agriculture Management</h1>
+        <p>Optimize your farming operations with our innovative management solutions</p>
+        <button class="cta-button" onclick="window.location.href='/register'">
+            Get Started
+        </button> <!-- ADD REGISTRATION LINK HERE-->
+    </div>
+</section>
+
+
+
+<main class="main-content">
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2>Our Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-tint feature-icon"></i>
+                <h3>Smart Irrigation</h3>
+                <p>Automated water management system for optimal crop growth</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-seedling feature-icon"></i>
+                <h3>Crop Monitoring</h3>
+                <p>Real-time crop health analysis and growth tracking</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agricultural Solutions -->
+    <section class="agricultural-solutions">
+        <h2 class="section-title">Agricultural Solutions</h2>
+        <div class="cards-container">
+            <div class="feature-card">
+                <i class="fas fa-robot card-icon"></i>
+                <h3 class="text-white">Farm Crops with AI</h3>
+                <p>Implement cutting-edge AI solutions for precision agriculture</p>
+                <button class="card-button" onclick="window.location.href='/recommend'">Explore AI Solutions</button>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-hand-holding-heart card-icon"></i>
+                <h3 class="text-white">Support Farmers</h3>
+                <p>Contribute to help less fortunate farmers sustain their agricultural activities</p>
+                <button class="card-button donate-button">Donate Now</button>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-handshake card-icon"></i>
+                <h3 class="text-white">Sponsor a Farmer</h3>
+                <p>Invest in farming initiatives and share in the profits of agricultural success</p>
+                <button class="card-button sponsor-button">Become a Sponsor</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats" id="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">1500+</div>
+                <p>Acres Managed</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">85%</div>
+                <p>Water Saved</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <p>Happy Farmers</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact" id="contact">
+        <div class="contact-form">
+            <h2>Contact Us</h2>
+            <form action="/" method="post">
+                {% csrf_token %}
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea placeholder="Message" name="desc" required></textarea>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+</main>
+
 {% endblock body %}

@@ -1,12 +1,15 @@
 from django.shortcuts import render,HttpResponse,redirect
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth import login , logout
-from .models import FarmerInput
+from .models import FarmerInput,Contact
+from django.contrib import messages
+from .middleware import auth,guest
 import requests
 import os
 import json
 import re
 #from .middlewares import auth,guest
+
 
 def register_view(request):
     if request.method == 'POST':
@@ -19,6 +22,7 @@ def register_view(request):
         initial_data = {'username' : '' , 'password1' :'' , 'password2':''}
         form = UserCreationForm(initial= initial_data)
     return render(request, 'auth/register.html' , {'form' : form})
+
 
 def login_view(request):
     if request.method == 'POST':
@@ -36,14 +40,38 @@ def logout_view(request):
     logout(request)
     return redirect('index')
 
+
 def index(request):
-    return render(request,'index.html')
+    context = {"success" : False}
+    if request.method== "POST":
+        #print("this is post")
+
+        name = request.POST['name']
+        email = request.POST['email']
+        desc = request.POST['desc']
+        print(name,email,desc)
+
+        ins = Contact( name = name, email= email,desc= desc)
+        ins.save()
+        context = {"success" : True}
+        print(name,email,desc)
+
+        messages.success(request, "Form successfully submitted!")  # Success message
+        print('message added')
+        return redirect('index')
+
+
+    
+    return render(request, 'index.html',context)
+
 
 def dashboard(request):
     return render(request,'dashboard.html')
 
+
 def step(request):
     return render(request,'steps.html')
+
 
 def recommend_crop(request):
     if request.method == 'POST':
@@ -131,6 +159,15 @@ def recommend_crop(request):
     return render(request, 'input_form.html')
 
 #cmd to activate gimini is : export GEMINI_API_KEY=AIzaSyD-r0oyE7b1EfkcGWC_t2SYsM0J2fjsYDk
+
+
+def about_us(request):
+    return render(request,'about_us.html')
+
+def faq(request):
+    return render(request,'faq.html')
+
+
 
 
 

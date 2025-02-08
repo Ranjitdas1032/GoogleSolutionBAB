@@ -1,0 +1,49 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+{% block title %}
+    about_us
+{% endblock title %}
+
+{% block body %}
+<!-- Write your code here directly no need for html snippit  -->
+<section class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <h2>About Agro Manage Pro</h2>
+            <p>
+                Agro Manage Pro is an AI-powered platform designed to assist farmers in selecting the most profitable and suitable crops based on 
+                market popularity, climate conditions, and soil quality. By leveraging Gemini AI, we provide accurate recommendations to help farmers 
+                maximize their yields and profits.
+            </p>
+        </div>
+        <div class="col-lg-6">
+            <img src="{% static 'images/agriculture.jpg' %}" class="img-fluid rounded" alt="Agro Manage Pro">
+        </div>
+    </div>
+</section>
+
+<section class="container mt-5">
+    <h2 class="text-center mb-4">Meet Our Team</h2>
+    <div class="row text-center">
+        <div class="col-md-4">
+            <div class="card shadow-lg p-3">
+                <h4>Ranjit Das</h4>
+                <p>Backend Developer (Django)</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-lg p-3">
+                <h4>Mohit Kumar</h4>
+                <p>Frontend Developer</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-lg p-3">
+                <h4>Abhishek Kumar Pal</h4>
+                <p>Frontend Developer</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock body %}

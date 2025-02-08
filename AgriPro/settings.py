@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-o^s4^4@*i%#l(6tb*$v^+$r496&kfz8e%!&cn(m9%kn-dvi+rk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -129,5 +129,5 @@ STATICFILES_DIRS =[
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-idx-googlesolutionbab-1738424708620.cluster-7ubberrabzh4qqy2g4z7wgxuw2.cloudworkstations.dev'
+    "https://8000-idx-googlesolutionbab-1738854651619.cluster-qpa6grkipzc64wfjrbr3hsdma2.cloudworkstations.dev"
 ]

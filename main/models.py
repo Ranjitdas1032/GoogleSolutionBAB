@@ -9,3 +9,11 @@ class FarmerInput(models.Model):
     def __str__(self):
         return f"Input by farmer on {self.created_at}"
 
+
+class Contact(models.Model):
+    name = models.CharField(max_length = 30)
+    email = models.EmailField()
+    desc = models.TextField()
+
+    def __str__(self):
+        return self.name + '-'+ self.email
