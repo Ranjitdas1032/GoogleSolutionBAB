@@ -6,6 +6,32 @@
 
 {% block body %}
 <!-- Write your code here directly no need for html snippit  -->
-<h1>Hi its dashboard page</h1>
+<div class="dashboard-container">
+    <div class="user-info">
+        <h3>User Details</h3>
+        <p>Name: {{request.user.username}}</p>
+        <p>Email: ranjitdas1032@gmail.com </p>
+        <a href="javascript:void();">change password</a><br/>
+        <a href="javascript:void();">Update Profile</a>
+    </div>
+
+    <a href="{% url 'logout' %}" class = "cta-button btn btn-defaul my-2t">Logout</a>
+
+    <div class="dashboard">
+        <div class="card">
+            <h3>Total Crops</h3>
+            <p>50</p>
+        </div>
+        <div class="card">
+            <h3>Weather Updates</h3>
+            <p>Sunny, 28°C</p>
+        </div>
+        <div class="card">
+            <h3>Soil Quality</h3>
+            <p>Optimal</p>
+        </div>
+    </div>
+    
+</div>
 
 {% endblock body %}
