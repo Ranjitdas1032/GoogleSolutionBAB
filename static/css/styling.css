@@ -223,6 +223,7 @@ body {
     color: var(--white);
     padding: 3rem 1rem;
     margin-top: 5rem;
+    position: relative;
 }
 
 .footer-content {

@@ -6,11 +6,11 @@ Recommendation
 
 {% block body %}
 <!-- Write your code here directly no need for html snippit  -->
-<div class="container d-flex justify-content-center align-items-center vh-100">
-    <div class="text-center p-4 shadow-lg rounded bg-light">
+<div class="container d-flex justify-content-center align-items-center vh-70">
+    <div class="text-center p-4 shadow-lg rounded bg-light mt-5 ">
         <h1 class="mb-3">Recommended Crop: <strong>{{ recommended_crop }}</strong></h1>
-        <h2 class="mb-2">Success Probability: <span class="text-success">{{ success_percent }}</span></h2>
-        <h2 class="mb-3">Estimated Cost: <span class="text-primary">{{ estimated_cost }}</span></h2>
+        <h2 class="mb-2">Success Probability: <span class="text-success">{{ success_percent }}%</span></h2>
+        <h2 class="mb-3">Estimated Cost: <span class="text-primary">{{ estimated_cost }}$</span></h2>
 
         <h3 class="mt-4">Steps to Follow:</h3>
         <ol class="text-start d-inline-block">

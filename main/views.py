@@ -94,19 +94,21 @@ def recommend_crop(request):
 
 
         # Construct the API endpoint with the key
-        gemini_endpoint = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={gemini_api_key}"
+        # Construct the API endpoint with the key
+        gemini_endpoint = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={gemini_api_key}"
+
 
         # Construct the prompt for the Gemini API
         prompt = f"""
-        Recommend a crop to grow given the following information:
+        Recommend a crop to grow given the following information in medium 10 steps:
         Land Dimensions: {land_dimensions}
         Climate: {climate}
         Soil Type: {soil_type}
         Please provide your answer in JSON format, including the following keys:
         - recommended_crop
         - steps
-        - success_percent
-        - estimated_cost
+        - success_percent in %
+        - estimated_cost in $
         """
 
         # Make the request to the Gemini API
